@@ -10,4 +10,7 @@
     <string name="easy_button">Fácil</string>
     <string name="hard_button">Difícil</string>
     <string name="medium_button">Médio</string>
+    <string name="exit_button">Sair</string>
+    <string name="return_button">Voltar</string>
+    <string name="finish_button">Terminar</string>
 </resources>

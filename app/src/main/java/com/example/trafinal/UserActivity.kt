@@ -22,6 +22,11 @@ class UserActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btExit.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

@@ -9,4 +9,7 @@
     <string name="easy_button">Easy</string>
     <string name="medium_button">Medium</string>
     <string name="hard_button">Hard</string>
+    <string name="exit_button">Exit</string>
+    <string name="return_button">Return</string>
+    <string name="finish_button">Finish</string>
 </resources>
