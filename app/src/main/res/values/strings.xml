@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TraFinal</string>
+    <string name="app_name">Trabalho Final</string>
+    <string name="login_button">Login</string>
+    <string name="password_txt">Password</string>
+    <string name="user_txt">Username</string>
+    <string name="play_button">Play</string>
+    <string name="rank_button">Ranking</string>
 </resources>

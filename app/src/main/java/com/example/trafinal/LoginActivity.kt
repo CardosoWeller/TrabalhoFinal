@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
+import android.content.Intent
+import android.widget.Toast
 
 class LoginActivity : AppCompatActivity(){
 
@@ -14,7 +16,14 @@ class LoginActivity : AppCompatActivity(){
         val info = intent.extras?.getString("info")
 
         Log.i("Info", "LoginActivity.onCreate")
-
+        btLogin.setOnClickListener{
+            if(logar(userTxt.text.toString(), passTxt.text.toString())){
+                val intent = Intent(this, UserActivity::class.java)
+                startActivity(intent)
+                }else{
+                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onStart() {
@@ -47,5 +56,14 @@ class LoginActivity : AppCompatActivity(){
         Log.i("Info", "LoginActivity.onDestroy")
     }
 
-
+    private fun logar(user: String, pass: String): Boolean {
+        if (user == "Wellerson") {
+            if (pass == "123a") {
+                return true
+            } else {
+                return false
+            }
+        }
+        return false
+    }
 }

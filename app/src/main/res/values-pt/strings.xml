@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trabalho Final</string>
+    <string name="login_button">Entrar</string>
+    <string name="password_txt">Senha</string>
+    <string name="user_txt">Usuário</string>
+    <string name="play_button">Jogar</string>
+    <string name="rank_button">Raking</string>
+</resources>
