@@ -5,4 +5,8 @@
     <string name="user_txt">Username</string>
     <string name="play_button">Play</string>
     <string name="rank_button">Ranking</string>
+    <string name="register_button">Register</string>
+    <string name="easy_button">Easy</string>
+    <string name="medium_button">Medium</string>
+    <string name="hard_button">Hard</string>
 </resources>

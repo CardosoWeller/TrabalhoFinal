@@ -6,4 +6,8 @@
     <string name="user_txt">Usuário</string>
     <string name="play_button">Jogar</string>
     <string name="rank_button">Raking</string>
+    <string name="register_button">Cadastrar</string>
+    <string name="easy_button">Fácil</string>
+    <string name="hard_button">Difícil</string>
+    <string name="medium_button">Médio</string>
 </resources>
