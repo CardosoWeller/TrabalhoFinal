@@ -22,19 +22,13 @@ class LoginActivity : AppCompatActivity(){
 
 
         btLogin.setOnClickListener{
-
             adapter = UserAdapter(applicationContext)
-            Log.i(passTxt.text.toString(), "pass")
-            Log.i(userTxt.text.toString(), "User")
-
-            Log.i(adapter.search(userTxt.text.toString(), passTxt.text.toString()).toString(), "User")
-
-            /*if(user.userName != null){
+            if(adapter.search(userTxt.text.toString(), passTxt.text.toString()) != null){
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
             }else{
                 Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
-            }*/
+            }
         }
 
 

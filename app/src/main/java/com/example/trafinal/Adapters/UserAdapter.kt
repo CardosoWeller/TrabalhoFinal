@@ -33,7 +33,8 @@ class UserAdapter(context: Context)  {
     }
 
     fun search(userName : String, passWord: String) : User? {
-       return DAO.findUser(userName,passWord)
+       userLogin = DAO.findUser(userName,passWord)
+       return userLogin
     }
 
 
