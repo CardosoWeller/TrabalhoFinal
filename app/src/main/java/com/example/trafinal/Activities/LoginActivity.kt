@@ -19,13 +19,28 @@ class LoginActivity : AppCompatActivity(){
         val info = intent.extras?.getString("info")
 
         Log.i("Info", "LoginActivity.onCreate")
+
+
         btLogin.setOnClickListener{
-            if(logar(userTxt.text.toString(), passTxt.text.toString())){
+
+            adapter = UserAdapter(applicationContext)
+            Log.i(passTxt.text.toString(), "pass")
+            Log.i(userTxt.text.toString(), "User")
+
+            Log.i(adapter.search(userTxt.text.toString(), passTxt.text.toString()).toString(), "User")
+
+            /*if(user.userName != null){
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
-                }else{
+            }else{
                 Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
-            }
+            }*/
+        }
+
+
+        btRegister.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -59,10 +74,4 @@ class LoginActivity : AppCompatActivity(){
         Log.i("Info", "LoginActivity.onDestroy")
     }
 
-    private fun logar(user: String, pass: String): Boolean {
-        if (adapter.search(user,pass)) {
-            return true
-        }
-        return false
-    }
 }

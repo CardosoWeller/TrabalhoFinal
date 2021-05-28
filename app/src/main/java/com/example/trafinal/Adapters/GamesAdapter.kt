@@ -34,7 +34,7 @@ class GamesAdapter(context:Context) : RecyclerView.Adapter<GamesAdapter.ViewHold
     }
 
     fun add(game: Game){
-        game.id_game = DAO.insertGame(game)
+        game.id = DAO.insertGame(game)
         games.add(game)
     }
 

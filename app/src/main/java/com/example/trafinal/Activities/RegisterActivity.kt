@@ -1,5 +1,6 @@
 package com.example.trafinal.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trafinal.Adapters.UserAdapter
@@ -16,7 +17,7 @@ class RegisterActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-
+        adapter = UserAdapter(applicationContext)
 
         btReturn.setOnClickListener(){
 
@@ -25,7 +26,8 @@ class RegisterActivity : AppCompatActivity(){
         btRegister.setOnClickListener(){
             val newUser = User(userNameTxt.text.toString(),emailTxt.text.toString() ,passWordTxt.text.toString())
             adapter.add(newUser)
-
+            val intent = Intent(this , LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

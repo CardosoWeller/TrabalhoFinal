@@ -10,17 +10,17 @@ import com.example.trafinal.Models.User
 @Dao
 interface UserDAO {
 
-    @Query("SELECT * FROM tabela_usuario")
+    @Query("SELECT * FROM tabelaUsuario")
     fun getAll(): List<User>
 
-    @Query("SELECT * FROM tabela_usuario WHERE id_user IN (:ids)")
+    @Query("SELECT * FROM tabelaUsuario WHERE id IN (:ids)")
     fun getAllByIds(ids : IntArray) : List<User>
 
     @Insert
     fun insertUser(user : User) : Long
 
-    @Query("SELECT * FROM tabela_usuario WHERE username IN (:username) AND senha (:password)")
-    fun findUser(username:String,password:String)
+    @Query("SELECT * FROM tabelaUsuario WHERE username LIKE :username AND senha LIKE:password")
+    fun findUser(username:String,password:String) : User
 
     @Delete
     fun deleteUser(user : User)

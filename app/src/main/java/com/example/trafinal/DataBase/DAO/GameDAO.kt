@@ -9,10 +9,10 @@ import com.example.trafinal.Models.Game
 @Dao
 interface GameDAO {
 
-    @Query("SELECT * FROM tabela_game")
+    @Query("SELECT * FROM tabelaGame")
     fun getAll(): List<Game>
 
-    @Query("SELECT * FROM tabela_game WHERE id_user IN (:ids)")
+    @Query("SELECT * FROM tabelaGame WHERE id_user IN (:ids)")
     fun getAllByIds(ids : IntArray) : List<Game>
 
     @Insert

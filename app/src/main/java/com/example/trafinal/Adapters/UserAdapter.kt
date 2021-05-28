@@ -1,6 +1,7 @@
 package com.example.trafinal.Adapters
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Room
 import com.example.trafinal.DataBase.AppDataBase
 import com.example.trafinal.DataBase.DAO.UserDAO
@@ -9,6 +10,8 @@ import com.example.trafinal.Models.User
 class UserAdapter(context: Context)  {
 
     private val DAO : UserDAO
+    private var userLogin: User? = null
+
 
     init{
         //criar a instancia da database
@@ -26,11 +29,12 @@ class UserAdapter(context: Context)  {
     }
 
     fun add(user: User){
-        DAO.insertUser(user)
+       DAO.insertUser(user)
     }
 
-    fun search(userName : String, passWord: String) : Boolean{
-        DAO.findUser(userName,passWord)
-            return true
+    fun search(userName : String, passWord: String) : User? {
+       return DAO.findUser(userName,passWord)
     }
+
+
 }
