@@ -6,10 +6,12 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
 import android.content.Intent
 import android.widget.Toast
+import com.example.trafinal.Adapters.UserAdapter
 import com.example.trafinal.R
 
 class LoginActivity : AppCompatActivity(){
 
+    lateinit var adapter: UserAdapter
     override fun onCreate(savedInstanceState : Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -58,12 +60,8 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun logar(user: String, pass: String): Boolean {
-        if (user == "Wellerson") {
-            if (pass == "123a") {
-                return true
-            } else {
-                return false
-            }
+        if (adapter.search(user,pass)) {
+            return true
         }
         return false
     }

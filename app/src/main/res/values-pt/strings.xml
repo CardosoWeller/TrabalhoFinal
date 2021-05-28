@@ -13,4 +13,5 @@
     <string name="exit_button">Sair</string>
     <string name="return_button">Voltar</string>
     <string name="finish_button">Terminar</string>
+    <string name="email_txt">E-mail</string>
 </resources>

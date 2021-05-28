@@ -17,10 +17,13 @@ interface UserDAO {
     fun getAllByIds(ids : IntArray) : List<User>
 
     @Insert
-    fun insertGame(user : User) : Long
+    fun insertUser(user : User) : Long
+
+    @Query("SELECT * FROM tabela_usuario WHERE username IN (:username) AND senha (:password)")
+    fun findUser(username:String,password:String)
 
     @Delete
-    fun deleteGame(user : User)
+    fun deleteUser(user : User)
 
 
 }

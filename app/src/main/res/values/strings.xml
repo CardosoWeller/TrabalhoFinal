@@ -12,4 +12,5 @@
     <string name="exit_button">Exit</string>
     <string name="return_button">Return</string>
     <string name="finish_button">Finish</string>
+    <string name="email_txt">Email</string>
 </resources>
