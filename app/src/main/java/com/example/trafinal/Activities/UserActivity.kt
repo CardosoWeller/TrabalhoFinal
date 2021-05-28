@@ -12,7 +12,7 @@ class UserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user)
 
         btPlay.setOnClickListener{
-            val intent = Intent(this , GameActivity::class.java)
+            val intent = Intent(this , GameOptionActivity::class.java)
             startActivity(intent)
         }
 

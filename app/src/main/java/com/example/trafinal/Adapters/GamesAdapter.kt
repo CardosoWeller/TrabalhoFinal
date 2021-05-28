@@ -1,16 +1,42 @@
 package com.example.trafinal.Adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.example.trafinal.DataBase.AppDataBase
+import com.example.trafinal.DataBase.DAO.GameDAO
 import com.example.trafinal.Models.Game
 import com.example.trafinal.R
 import kotlinx.android.synthetic.main.item_game.view.*
 
-class GamesAdapter : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
+class GamesAdapter(context:Context) : RecyclerView.Adapter<GamesAdapter.ViewHolder>() {
 
-    private val games = Game.getAll()
+    private val DAO : GameDAO
+    private val games: MutableList<Game>
+
+    init{
+        //criar a instancia da database
+
+        val db = Room.databaseBuilder(
+            context,
+            AppDataBase::class.java,
+            "bancoDeDados.db"
+        )
+            .allowMainThreadQueries()
+            .build()
+
+        DAO = db.gameDAO()
+
+        games = DAO.getAll().toMutableList()
+    }
+
+    fun add(game: Game){
+        game.id_game = DAO.insertGame(game)
+        games.add(game)
+    }
 
     override fun getItemCount() = games.size
 

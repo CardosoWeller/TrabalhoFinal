@@ -3,40 +3,19 @@ package com.example.trafinal.Activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.trafinal.Managers.GameManager
+import com.example.trafinal.Adapters.GamesAdapter
+import com.example.trafinal.Models.Game
 import com.example.trafinal.R
 import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.activity_gameplay.*
+import kotlinx.android.synthetic.main.activity_rank.*
 
-
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity(){
+    lateinit var adapter: GamesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_game)
-
-
-        btEasy.setOnClickListener{
-
-            starGame(1)
-        }
-
-        btMedium.setOnClickListener{
-
-            starGame(2)
-
-        }
-        btHard.setOnClickListener{
-
-            starGame(3)
-
-        }
-
-        btReturn.setOnClickListener{
-            val intent = Intent(this , UserActivity::class.java)
-            startActivity(intent)
-        }
-
+        setContentView(R.layout.activity_gameplay)
 
         //activity_gameplay
 
@@ -61,15 +40,14 @@ class GameActivity : AppCompatActivity() {
 
 
     fun starGame(i : Int){
-        /*setContentView(R.layout.activity_gameplay)
-        val  game = GameManager()
 
-        game.getQuestion(i)
-
-        //questionTxt.setText(game.getQuestion(i))*/
     }
 
     fun finishGame(){
+        val newGame = Game(1, 2, 2,"Fácil")
+        adapter.add(newGame)
+        val intent = Intent(this , UserActivity::class.java)
+        startActivity(intent)
 
     }
 }

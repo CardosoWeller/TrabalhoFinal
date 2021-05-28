@@ -15,7 +15,7 @@ class RankActivity : AppCompatActivity (){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rank)
 
-        var gAdapter = GamesAdapter()
+        var gAdapter = GamesAdapter(applicationContext)
 
         listGames.adapter = gAdapter
         listGames.layoutManager = LinearLayoutManager(
