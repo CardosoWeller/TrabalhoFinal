@@ -1,10 +1,10 @@
-package com.example.trafinal
+package com.example.trafinal.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.trafinal.Managers.GameManager
+import com.example.trafinal.R
 import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.activity_gameplay.*
 
@@ -61,12 +61,12 @@ class GameActivity : AppCompatActivity() {
 
 
     fun starGame(i : Int){
-        setContentView(R.layout.activity_gameplay)
+        /*setContentView(R.layout.activity_gameplay)
         val  game = GameManager()
 
         game.getQuestion(i)
 
-        //questionTxt.setText(game.getQuestion(i))
+        //questionTxt.setText(game.getQuestion(i))*/
     }
 
     fun finishGame(){

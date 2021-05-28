@@ -1,7 +1,8 @@
-package com.example.trafinal
+package com.example.trafinal.Activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.trafinal.R
 
 class RegisterActivity : AppCompatActivity(){
 
