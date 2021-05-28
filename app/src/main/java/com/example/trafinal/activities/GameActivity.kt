@@ -1,17 +1,15 @@
-package com.example.trafinal.Activities
+package com.example.trafinal.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.trafinal.Adapters.GamesAdapter
-import com.example.trafinal.Models.Game
+import com.example.trafinal.adapters.GameAdapter
+import com.example.trafinal.models.Game
 import com.example.trafinal.R
-import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.activity_gameplay.*
-import kotlinx.android.synthetic.main.activity_rank.*
 
 class GameActivity : AppCompatActivity(){
-    lateinit var adapter: GamesAdapter
+    lateinit var adapter: GameAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +42,8 @@ class GameActivity : AppCompatActivity(){
     }
 
     fun finishGame(){
-        val newGame = Game(1, 2, 2,"Fácil")
-        adapter.add(newGame)
+        val newGame = Game("Wellerson", 12)
+        /*adapter.add(newGame)*/
         val intent = Intent(this , UserActivity::class.java)
         startActivity(intent)
 

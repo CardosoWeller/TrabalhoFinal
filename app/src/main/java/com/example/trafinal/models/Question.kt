@@ -1,4 +1,4 @@
-package com.example.trafinal.Models
+package com.example.trafinal.models
 
 import com.google.gson.annotations.SerializedName
 

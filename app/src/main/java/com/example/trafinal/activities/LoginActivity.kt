@@ -1,4 +1,4 @@
-package com.example.trafinal.Activities
+package com.example.trafinal.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
 import android.content.Intent
 import android.widget.Toast
-import com.example.trafinal.Adapters.UserAdapter
+import com.example.trafinal.adapters.UserAdapter
 import com.example.trafinal.R
 
 class LoginActivity : AppCompatActivity(){
@@ -22,13 +22,13 @@ class LoginActivity : AppCompatActivity(){
 
 
         btLogin.setOnClickListener{
-            adapter = UserAdapter(applicationContext)
-            if(adapter.search(userTxt.text.toString(), passTxt.text.toString()) != null){
+            //adapter = UserAdapter(applicationContext)
+            /*if(adapter.search(userTxt.text.toString(), passTxt.text.toString()) != null){*/
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
-            }else{
+            /*}else{
                 Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
-            }
+            }*/
         }
 
 

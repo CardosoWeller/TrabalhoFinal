@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activities.MainActivity">
+
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,21 +19,21 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.LoginActivity">
+        <activity android:name=".activities.LoginActivity">
         </activity>
 
-        <activity android:name=".Activities.UserActivity">
+        <activity android:name=".activities.UserActivity">
         </activity>
 
-        <activity android:name=".Activities.GameOptionActivity">
+        <activity android:name=".activities.GameOptionActivity">
         </activity>
 
-        <activity android:name=".Activities.RankActivity">
+        <activity android:name=".activities.RankActivity">
         </activity>
 
-        <activity android:name=".Activities.RegisterActivity">
+        <activity android:name=".activities.RegisterActivity">
         </activity>
 
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.trafinal.Activities
+package com.example.trafinal.activities
 
 import android.content.Intent
 import android.os.Bundle
