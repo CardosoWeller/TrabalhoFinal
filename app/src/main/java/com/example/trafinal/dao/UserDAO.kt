@@ -1,5 +1,6 @@
 package com.example.trafinal.dao
 
+import android.util.Log
 import com.example.trafinal.models.User
 import com.example.trafinal.network.servicies.UserServicies
 import retrofit2.Call
@@ -19,11 +20,12 @@ class UserDAO{
     fun getUser(finished: (user: User) -> Unit){
         service.getUser(1).enqueue(object : Callback<User> {
             override fun onFailure(call: Call<User>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val user = response.body()!!
+                Log.i(user.toString(), "UserDAO")
                 finished(user)
 
             }

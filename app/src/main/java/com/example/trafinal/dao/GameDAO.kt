@@ -1,7 +1,10 @@
 package com.example.trafinal.dao
 
+import android.util.Log
 import com.example.trafinal.models.Game
+import com.example.trafinal.models.ReceberServidor
 import com.example.trafinal.network.servicies.GameServicies
+import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,14 +21,17 @@ class GameDAO{
 
     val service = retrofit.create(GameServicies::class.java)
 
-    fun getAll(finished: (game: List<Game>) -> Unit){
-        service.getAll().enqueue(object : Callback<List<Game>> {
-            override fun onResponse(call: Call<List<Game>>, response: Response<List<Game>>) {
-                val games = response.body()!!
-                finished(games)
+    fun getAll(finished: (receber : ReceberServidor) -> Unit){
+        service.getAll().enqueue(object : Callback<ReceberServidor> {
+            override fun onResponse(call: Call<ReceberServidor>, response: Response<ReceberServidor>) {
+
+                val receber = response.body()!!
+
+
+                finished(receber)
 
             }
-            override fun onFailure(call: Call<List<Game>>, t: Throwable) {}
+            override fun onFailure(call: Call<ReceberServidor>, t: Throwable) {}
 
         })
     }

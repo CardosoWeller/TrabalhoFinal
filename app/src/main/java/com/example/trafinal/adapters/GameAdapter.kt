@@ -8,20 +8,35 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.trafinal.models.Game
 import com.example.trafinal.R
 import com.example.trafinal.dao.GameDAO
+import com.google.gson.JsonElement
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.item_game.view.*
 
 class GameAdapter() : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
     private val DAO = GameDAO()
     private var games = mutableListOf<Game>()
+    private var json = JsonObject()
 
     init{
 
-        DAO.getAll{ gamesAPI ->
-            games = gamesAPI.toMutableList()
+        DAO.getAll{ receberAPI ->
+            json = receberAPI.data
+
+
+            var tamanho = json.get("ranking").asJsonArray.size()
+
+            for(i in 0..tamanho-1) {
+                games.add(
+                    Game(
+                        json.get("ranking").asJsonArray[i].asJsonObject.get("user").toString(),
+                        json.get("ranking").asJsonArray[i].asJsonObject.get("score").asInt
+                    )
+                )
+            }
+            //games.add()
             notifyDataSetChanged()
 
-            Log.i(games.toString() , "Jogos")
         }
 
     }
